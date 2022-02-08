@@ -1,14 +1,12 @@
 import Cookies from 'js-cookie'
 
 const cookieKey = "NgNet.authorization.token";
-const token = Cookies.get(cookieKey);
-const roleUrl = parseToken(token).role;
-const url = 'http://localhost:7000/' + roleUrl;
+const url = 'http://localhost:7000/';
 
 
 export const register = async (data) => {
     try {
-        let res = await fetch(`${url}/register`, {
+        let res = await fetch(`${url}${parseToken().role}/register`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -29,7 +27,7 @@ export const register = async (data) => {
 
 export const login = async (data) => {
     try {
-        let res = await fetch(`${url}/login`, {
+        let res = await fetch(`${url}${parseToken().role}/login`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -51,12 +49,12 @@ export const login = async (data) => {
 
 export const profile = async () => {
     try {
-        let res = await fetch(`${url}/profile`, {
+        let res = await fetch(`${url}${parseToken().role}/profile`, {
             method: 'GET',
             // credentials: 'include',
             headers: {
                 'content-type': 'application/json',
-                'authorization': 'Bearer ' + token,
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
             }
         });
 
@@ -73,11 +71,11 @@ export const profile = async () => {
 
 export const logout = async () => {
     try {
-        let res = await fetch(`${url}/logout`, {
+        let res = await fetch(`${url}${parseToken().role}/logout`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
-                'authorization': 'Bearer ' + token,
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
             }
         });
 
@@ -96,9 +94,10 @@ export const setToken = (token) => {
     Cookies.set(cookieKey, token);
 }
 
-export const getUser = () => parseToken(token);
+export const getUser = () => parseToken();
 
-function parseToken(token) {
+function parseToken() {
+    const token = Cookies.get(cookieKey);
     let user = { role: 'auth' };
 
     if (!token) {

@@ -4,13 +4,12 @@ import { AuthContext } from '../contexts/authContext'
 export function MetaData() {
 
     let { authState } = useContext(AuthContext);
-    let isLogged = authState?.userId;
+    let isLogged = authState?.userId && authState?.username;
 
     useEffect(() => {
         isLogged = authState?.userId;
     }, [authState]);
 
-    console.log(authState);
     return (
         <div className="metadata">
             <div className='isLogged'>

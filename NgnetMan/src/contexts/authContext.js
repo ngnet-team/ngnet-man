@@ -4,9 +4,7 @@ import * as authService from '../services/authService'
 export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
 
-    const user = authService.getUser();
-
-    const [authState, setAuthState] = useState(user);
+    const [authState, setAuthState] = useState(authService.getUser());
 
     const updateUser = () => { 
         setAuthState(authService.getUser());
