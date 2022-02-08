@@ -10,6 +10,7 @@ export function MetaData() {
         isLogged = authState?.userId;
     }, [authState]);
 
+    console.log(authState);
     return (
         <div className="metadata">
             <div className='isLogged'>

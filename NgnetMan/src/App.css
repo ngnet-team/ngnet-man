@@ -2,13 +2,15 @@
   display: grid;
   grid-auto-flow: row;
   row-gap: 20px;
-  max-width: 400px;
+  width: 600px;
   margin: 50px;
 }
 
 .request, .response, .metadata {
   background-color: rgb(255, 248, 239);
   padding: 50px;
+  border: 2px solid rgb(66, 110, 0);
+  border-radius: 10px;
 }
 
 .request > form {
@@ -43,4 +45,7 @@ button {
 
 button:hover {
   cursor: pointer;
+  color: rgb(172, 133, 60);
+  background-color: white;
+  border: 1px solid rgb(172, 133, 60);
 }

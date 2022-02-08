@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react"
 import { HttpContext } from "../contexts/httpContext";
 import { AuthContext } from "../contexts/authContext";
-import * as authService from '../services/authService'
+import * as authService from '../services/authService';
+import JSONPretty from 'react-json-pretty';
 
 
 export function Response() {
@@ -13,23 +14,15 @@ export function Response() {
         authService.setToken(responseState.token);
     }
 
-    let hasResponse;
-    if (responseState) {
-        hasResponse = Object.values(responseState)?.length > 0;
-    }
-
     useEffect(() => {
         updateUser();
-    }, [hasResponse]);
-
+    }, [responseState]);
 
     return (
         <div>
-            <div>{hasResponse
+            <div>{responseState
                 ? <div className="response">
-                    {Object.entries(responseState).map(([key, value], index) => (
-                        <div key={index}>{key}: {typeof value == String ? value : 'obj'}</div>
-                    ))}
+                    <JSONPretty id="json-pretty" data={responseState}></JSONPretty>
                 </div>
                 : <div className="response">No Response</div>}
             </div>

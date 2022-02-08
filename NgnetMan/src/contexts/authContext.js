@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
 
     const updateUser = () => { 
         setAuthState(authService.getUser());
-        console.log(authService.getUser())
     }
 
     return (
