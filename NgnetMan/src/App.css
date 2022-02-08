@@ -1,0 +1,46 @@
+.main {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 20px;
+  max-width: 400px;
+  margin: 50px;
+}
+
+.request, .response, .metadata {
+  background-color: rgb(255, 248, 239);
+  padding: 50px;
+}
+
+.request > form {
+  display: grid;
+  grid-template-rows: 2fr auto 1fr;
+  row-gap: 20px;
+}
+
+.params {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 20px;
+}
+
+.param {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 2px;
+}
+
+input {
+  height: 30px;
+}
+
+button {
+  width: 130px;
+  background-color: rgb(172, 133, 60);
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}
