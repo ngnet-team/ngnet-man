@@ -49,3 +49,8 @@ button:hover {
   background-color: white;
   border: 1px solid rgb(172, 133, 60);
 }
+
+.nasted-input{
+  height: 30px;
+  width: 30px;
+}

@@ -90,6 +90,28 @@ export const logout = async () => {
     }
 }
 
+export const update = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/update`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
 export const setToken = (token) => {
     Cookies.set(cookieKey, token);
 }

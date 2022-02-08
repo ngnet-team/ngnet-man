@@ -1,0 +1,57 @@
+{
+    "actions": [
+
+        { "value": "register", "label": "Register" },
+        { "value": "login", "label": "Login" },
+        { "value": "logout", "label": "Logout" },
+        { "value": "profile", "label": "Profile" },
+        { "value": "update", "label": "Update" },
+        { "value": "change", "label": "Change" }, 
+        { "value": "resetPassword", "label": "Reset Password" },
+        { "value": "delete", "label": "Delete" },
+        { "value": "deleteAccount", "label": "DeleteAccount" }, 
+
+        { "value": "getUsers", "label": "Get Users" },
+        { "value": "getRoles", "label": "Get Roles" },
+        { "value": "getEntries", "label": "Get Entries" },
+        { "value": "changeRole", "label": "Change Role" }, 
+        { "value": "deleteUser", "label": "Delete User" }, 
+        { "value": "deleteUserAccount", "label": "Delete User Account" }, 
+
+        { "value": "setMaxRoles", "label": "Set Max Roles" }  
+    ], 
+    "params":{
+        "register": [
+            { "value": "email", "label": "Email" },
+            { "value": "username", "label": "Username" },
+            { "value": "password", "label": "Password" },
+            { "value": "repeatPassword", "label": "RepeatPassword" }
+        ],
+        "login": [
+            { "value": "username", "label": "Username" },
+            { "value": "password", "label": "Password" }
+        ],
+        "update": [
+            { "value": "firstName", "label": "FirstName" },
+            { "value": "middleName", "label": "MiddleName" },
+            { "value": "lastName", "label": "LastName" },
+            { "value": "gender", "label": "Gender" },
+            { "value": "age", "label": "Age" }
+        ],
+        "change": [
+            { "value": "key", "label": "Key" },
+            { "value": "old", "label": "Old" },
+            { "value": "new", "label": "New" },
+            { "value": "repeatNew", "label": "RepeatNew" }
+        ],
+        "changeRole": [
+            { "value": "roleName", "label": "Role Name" }
+        ],
+        "deleteUser": [
+            { "value": "id", "label": "User Id" }
+        ],
+        "deleteUserAccount": [
+            { "value": "id", "label": "User Id" }
+        ]
+    }
+}
