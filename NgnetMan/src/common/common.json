@@ -24,34 +24,37 @@
         "register": [
             { "value": "email", "label": "Email" },
             { "value": "username", "label": "Username" },
-            { "value": "password", "label": "Password" },
-            { "value": "repeatPassword", "label": "RepeatPassword" }
+            { "value": "password", "label": "Password" }
         ],
         "login": [
             { "value": "username", "label": "Username" },
             { "value": "password", "label": "Password" }
         ],
         "update": [
-            { "value": "firstName", "label": "FirstName" },
-            { "value": "middleName", "label": "MiddleName" },
-            { "value": "lastName", "label": "LastName" },
+            { "value": "firstName", "label": "Firstname" },
+            { "value": "middleName", "label": "Middlename" },
+            { "value": "lastName", "label": "Lastname" },
             { "value": "gender", "label": "Gender" },
             { "value": "age", "label": "Age" }
         ],
         "change": [
             { "value": "key", "label": "Key" },
             { "value": "old", "label": "Old" },
-            { "value": "new", "label": "New" },
-            { "value": "repeatNew", "label": "RepeatNew" }
+            { "value": "new", "label": "New" }
         ],
         "changeRole": [
-            { "value": "roleName", "label": "Role Name" }
+            { "value": "id", "label": "User Id" },
+            { "value": "roleName", "label": "Role name" }
         ],
         "deleteUser": [
             { "value": "id", "label": "User Id" }
         ],
         "deleteUserAccount": [
             { "value": "id", "label": "User Id" }
+        ],
+        "setMaxRoles": [
+            { "value": "name", "label": "Role name" },
+            { "value": "maxCount", "label": "Max count" }
         ]
     }
 }
