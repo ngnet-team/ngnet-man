@@ -50,6 +50,7 @@
             { "value": "new", "label": "New" }
         ],
         "changeRole": [
+            { "value": "id", "label": "User Id" },
             { "value": "roleName", "label": "Role Name" }
         ],
         "deleteUser": [

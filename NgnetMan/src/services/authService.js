@@ -3,109 +3,25 @@ import Cookies from 'js-cookie'
 const cookieKey = "NgNet.authorization.token";
 const url = 'http://localhost:7000/';
 
+export const sendAjax = async(method, action, data) => {
+    const token = Cookies.get(cookieKey);
 
-export const register = async (data) => {
     try {
-        let res = await fetch(`${url}${parseToken().role}/register`, {
-            method: 'POST',
+        let res = await fetch(`${url}${parseToken().role}/${action}`, {
+            method: `${method}`,
             headers: {
                 'content-type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-
-        let result = await res.json();
-        if (res.ok) {
-            //attach result
-        }
-        return result;
-    } catch (error) {
-        //attach error
-    }
-
-}
-
-export const login = async (data) => {
-    try {
-        let res = await fetch(`${url}${parseToken().role}/login`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
+                'authorization': token ? 'Bearer ' + token : '',
             },
             body: JSON.stringify(data)
         });
 
         let result = await res.json();
 
-        if (res.ok && res.token) {
-            //attach result
-        }
-        return result;
-    } catch (error) {
-        console.log(error)
-    }
-
-}
-
-export const profile = async () => {
-    try {
-        let res = await fetch(`${url}${parseToken().role}/profile`, {
-            method: 'GET',
-            // credentials: 'include',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': 'Bearer ' + Cookies.get(cookieKey),
-            }
-        });
-
-        let result = await res.json();
-
-        if (res.ok) {
-            //attach result
-        }
-        return result;
-    } catch (error) {
-        //attach error
-    }
-}
-
-export const logout = async () => {
-    try {
-        let res = await fetch(`${url}${parseToken().role}/logout`, {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': 'Bearer ' + Cookies.get(cookieKey),
-            }
-        });
-
-        let data = await res.json();
-        
-        if (res.ok) {
+        if (action === 'logout' && res.ok) {
             Cookies.remove(cookieKey);
         }
-        return data;
-    } catch (error) {
-        //attach error
-    }
-}
 
-export const update = async (data) => {
-    try {
-        let res = await fetch(`${url}${parseToken().role}/update`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': 'Bearer ' + Cookies.get(cookieKey),
-            },
-            body: JSON.stringify(data)
-        });
-
-        let result = await res.json();
-        
-        if (res.ok) {
-           
-        }
         return result;
     } catch (error) {
         //attach error
