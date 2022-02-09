@@ -8,7 +8,7 @@
         { "value": "update", "label": "Update" },
         { "value": "change", "label": "Change" }, 
         { "value": "resetPassword", "label": "Reset Password" },
-        { "value": "delete", "label": "Delete" },
+        { "value": "_delete", "label": "Delete" },
         { "value": "deleteAccount", "label": "DeleteAccount" }, 
 
         { "value": "getUsers", "label": "Get Users" },

@@ -156,6 +156,204 @@ export const resetPassword = async (data) => {
     }
 }
 
+export const _delete = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/delete`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const deleteAccount = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/deleteAccount`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const getUsers = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/getUsers`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const getRoles = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/getRoles`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const getEntries = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/getEntries`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const changeRole = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/changeRole`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const deleteUser = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/deleteUser`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const deleteUserAccount = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/deleteUserAccount`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
+export const setMaxRoles = async (data) => {
+    try {
+        let res = await fetch(`${url}${parseToken().role}/setMaxRoles`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': 'Bearer ' + Cookies.get(cookieKey),
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+        
+        if (res.ok) {
+           
+        }
+        return result;
+    } catch (error) {
+        //attach error
+    }
+}
+
 export const setToken = (token) => {
     Cookies.set(cookieKey, token);
 }
