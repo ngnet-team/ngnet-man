@@ -26,7 +26,11 @@ export function Request() {
             }, {});
         }
 
-        authService[action](data).then(res => {
+        const method = common.actions.find(x => x.value === action).method;
+        authService.sendAjax(method, action, data).then(res => {
+            if (res?.token) {
+                authService.setToken(res.token);
+            }
             setResponse(res);
         });
     };

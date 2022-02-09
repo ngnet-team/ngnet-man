@@ -1,24 +1,24 @@
 {
     "actions": [
 
-        { "value": "register", "label": "Register" },
-        { "value": "login", "label": "Login" },
-        { "value": "logout", "label": "Logout" },
-        { "value": "profile", "label": "Profile" },
-        { "value": "update", "label": "Update" },
-        { "value": "change", "label": "Change" }, 
-        { "value": "resetPassword", "label": "Reset Password" },
-        { "value": "_delete", "label": "Delete" },
-        { "value": "deleteAccount", "label": "DeleteAccount" }, 
+        { "method": "POST", "value": "register", "label": "Register" },
+        { "method": "POST", "value": "login", "label": "Login" },
+        { "method": "GET", "value": "logout", "label": "Logout" },
+        { "method": "GET", "value": "profile", "label": "Profile" },
+        { "method": "POST", "value": "update", "label": "Update" },
+        { "method": "POST", "value": "change", "label": "Change" }, 
+        { "method": "GET", "value": "resetPassword", "label": "Reset Password" },
+        { "method": "GET", "value": "_delete", "label": "Delete" },
+        { "method": "GET", "value": "deleteAccount", "label": "DeleteAccount" }, 
 
-        { "value": "getUsers", "label": "Get Users" },
-        { "value": "getRoles", "label": "Get Roles" },
-        { "value": "getEntries", "label": "Get Entries" },
-        { "value": "changeRole", "label": "Change Role" }, 
-        { "value": "deleteUser", "label": "Delete User" }, 
-        { "value": "deleteUserAccount", "label": "Delete User Account" }, 
+        { "method": "GET", "value": "getUsers", "label": "Get Users" },
+        { "method": "GET", "value": "getRoles", "label": "Get Roles" },
+        { "method": "GET", "value": "getEntries", "label": "Get Entries" },
+        { "method": "POST", "value": "changeRole", "label": "Change Role" }, 
+        { "method": "POST", "value": "deleteUser", "label": "Delete User" }, 
+        { "method": "POST", "value": "deleteUserAccount", "label": "Delete User Account" }, 
 
-        { "value": "setMaxRoles", "label": "Set Max Roles" }  
+        { "method": "POST", "value": "setMaxRoles", "label": "Set Max Roles" }  
     ], 
     "params":{
         "register": [
