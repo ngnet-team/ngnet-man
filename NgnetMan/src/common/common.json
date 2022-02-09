@@ -8,7 +8,7 @@
         { "value": "update", "label": "Update" },
         { "value": "change", "label": "Change" }, 
         { "value": "resetPassword", "label": "Reset Password" },
-        { "value": "_delete", "label": "Delete" },
+        { "value": "delete", "label": "Delete" },
         { "value": "deleteAccount", "label": "DeleteAccount" }, 
 
         { "value": "getUsers", "label": "Get Users" },
@@ -31,9 +31,9 @@
             { "value": "password", "label": "Password" }
         ],
         "update": [
-            { "value": "firstName", "label": "Firstname" },
-            { "value": "middleName", "label": "Middlename" },
-            { "value": "lastName", "label": "Lastname" },
+            { "value": "firstName", "label": "FirstName" },
+            { "value": "middleName", "label": "MiddleName" },
+            { "value": "lastName", "label": "LastName" },
             { "value": "gender", "label": "Gender" },
             { "value": "age", "label": "Age" }
         ],
@@ -44,7 +44,7 @@
         ],
         "changeRole": [
             { "value": "id", "label": "User Id" },
-            { "value": "roleName", "label": "Role name" }
+            { "value": "roleName", "label": "Role Name" }
         ],
         "deleteUser": [
             { "value": "id", "label": "User Id" }
@@ -54,7 +54,7 @@
         ],
         "setMaxRoles": [
             { "value": "name", "label": "Role name" },
-            { "value": "maxCount", "label": "Max count" }
+            { "value": "maxCount", "label": "Max Count" }
         ]
     }
 }
