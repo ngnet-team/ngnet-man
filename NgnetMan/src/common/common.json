@@ -42,7 +42,11 @@
                   { "value": "str", "label": "Str" } 
                 ],
                  "label": "Address"},
-            { "value": "contact", "label": "Contact" }
+            { "value": [ 
+                { "value": "ss", "label": "Country" },
+                { "value": "ss", "label": "City" },
+                { "value": "ss", "label": "Str" } 
+              ], "label": "Contact" }
         ],
         "change": [
             { "value": "key", "label": "Key" },

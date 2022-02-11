@@ -56,10 +56,10 @@ export function Request() {
                     {common.params[action]?.map((param) => (
                         <div className="param" key={param.value}>
                             <label>{param.label}</label>
-                            {
+                            { 
                                 Array.isArray(param.value)
                                     ? <>
-                                        <input readonly="readonly" type='text' onClick={toggleAddressHandler}></input>
+                                        <span onClick={toggleAddressHandler}>+</span>
                                         {check ?
                                             param.value.map((nasted, index) => (
                                                 <div key={index} className="nasted-param">
@@ -67,7 +67,8 @@ export function Request() {
                                                     <input type='text' className='nasted-input' name={nasted.value} />
                                                 </div>
                                             ))
-                                            : null}
+                                            : null
+                                            }
                                     </>
                                     : <input type={param.value} name={param.value} />
                             }
