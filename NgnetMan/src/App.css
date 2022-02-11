@@ -52,5 +52,12 @@ button:hover {
 
 .nasted-input{
   height: 30px;
-  width: 30px;
+  width: 230px;
+}
+
+.nasted-param {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 2px;
+  margin-left: 40px;
 }

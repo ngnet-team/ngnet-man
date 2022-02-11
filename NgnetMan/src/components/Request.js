@@ -10,6 +10,7 @@ export function Request() {
     const bodyParams = common.params;
 
     let [action, setAction] = useState();
+    let [check, setCheck] = useState(false);
     let { setResponse } = useContext(HttpContext);
 
     function sendRequest(e) {
@@ -20,7 +21,7 @@ export function Request() {
         if (common.params[action]) {
             data = common.params[action].reduce((acc, curr) => {
                 let key = curr.value;
-                const value = formData.get(curr.value);
+                let value = formData.get(curr.value);
                 acc[key] = value ? value : null;
                 return acc;
             }, {});
@@ -39,6 +40,10 @@ export function Request() {
         setAction(e.value);
     }
 
+    function toggleAddressHandler() {
+        setCheck(!check);
+    }
+
     return (
         <div className="request">
             <form onSubmit={sendRequest}>
@@ -51,7 +56,22 @@ export function Request() {
                     {common.params[action]?.map((param) => (
                         <div className="param" key={param.value}>
                             <label>{param.label}</label>
-                            <input name={param.value} />
+                            { 
+                                Array.isArray(param.value)
+                                    ? <>
+                                        <span onClick={toggleAddressHandler}>+</span>
+                                        {check ?
+                                            param.value.map((nasted, index) => (
+                                                <div key={index} className="nasted-param">
+                                                    <label>{nasted.label}</label>
+                                                    <input type='text' className='nasted-input' name={nasted.value} />
+                                                </div>
+                                            ))
+                                            : null
+                                            }
+                                    </>
+                                    : <input type={param.value} name={param.value} />
+                            }
                         </div>
                     ))}
                 </div>
