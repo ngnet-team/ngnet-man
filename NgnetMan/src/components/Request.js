@@ -57,20 +57,21 @@ export function Request() {
                         <div className="param" key={param.value}>
                             <label>{param.label}</label>
                             { 
-                                Array.isArray(param.value)
-                                    ? <>
-                                        <span onClick={toggleAddressHandler}>+</span>
-                                        {check ?
-                                            param.value.map((nasted, index) => (
-                                                <div key={index} className="nasted-param">
-                                                    <label>{nasted.label}</label>
-                                                    <input type='text' className='nasted-input' name={nasted.value} />
-                                                </div>
-                                            ))
-                                            : null
-                                            }
-                                    </>
-                                    : <input type={param.value} name={param.value} />
+                                // Array.isArray(param.value)
+                                //     ? <>
+                                //         <span onClick={toggleAddressHandler}>+</span>
+                                //         {check ?
+                                //             param.value.map((nasted, index) => (
+                                //                 <div key={index} className="nasted-param">
+                                //                     <label>{nasted.label}</label>
+                                //                     <input type='text' className='nasted-input' name={nasted.value} />
+                                //                 </div>
+                                //             ))
+                                //             : null
+                                //             }
+                                //     </>
+                                //     : 
+                                    <input type={param.value} name={param.value} />
                             }
                         </div>
                     ))}

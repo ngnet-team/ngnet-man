@@ -11,9 +11,10 @@
         { "method": "POST", "value": "delete", "label": "Delete" },
         { "method": "POST", "value": "deleteAccount", "label": "DeleteAccount" }, 
 
-        { "method": "GET", "value": "getUsers", "label": "Get Users" },
-        { "method": "GET", "value": "getRoles", "label": "Get Roles" },
-        { "method": "GET", "value": "getEntries", "label": "Get Entries" },
+        { "method": "GET", "value": "users", "label": "Get Users" },
+        { "method": "GET", "value": "roles", "label": "Get Roles" },
+        { "method": "GET", "value": "entries", "label": "Get Entries" },
+        { "method": "POST", "value": "rightsChanges", "label": "Rights Changes" },
         { "method": "POST", "value": "changeRole", "label": "Change Role" }, 
         { "method": "POST", "value": "deleteUser", "label": "Delete User" }, 
         { "method": "POST", "value": "deleteUserAccount", "label": "Delete User Account" }, 
@@ -62,6 +63,11 @@
         ],
         "deleteUserAccount": [
             { "value": "id", "label": "User Id" }
+        ],
+        "rightsChanges": [
+            { "value": "from", "label": "From" },
+            { "value": "to", "label": "To" },
+            { "value": "role", "label": "Role" }
         ],
         "setMaxRoles": [
             { "value": "name", "label": "Role name" },
