@@ -71,7 +71,7 @@ export function Request() {
                                 //             }
                                 //     </>
                                 //     : 
-                                    <input type={param.value} name={param.value} />
+                                    <input name={param.value} />
                             }
                         </div>
                     ))}

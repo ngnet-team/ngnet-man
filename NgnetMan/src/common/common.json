@@ -11,9 +11,9 @@
         { "method": "POST", "value": "delete", "label": "Delete" },
         { "method": "POST", "value": "deleteAccount", "label": "DeleteAccount" }, 
 
-        { "method": "GET", "value": "users", "label": "Get Users" },
-        { "method": "GET", "value": "roles", "label": "Get Roles" },
-        { "method": "GET", "value": "entries", "label": "Get Entries" },
+        { "method": "GET", "value": "users", "label": "Users" },
+        { "method": "GET", "value": "roles", "label": "Roles" },
+        { "method": "GET", "value": "entries", "label": "Entries" },
         { "method": "POST", "value": "rightsChanges", "label": "Rights Changes" },
         { "method": "POST", "value": "changeRole", "label": "Change Role" }, 
         { "method": "POST", "value": "deleteUser", "label": "Delete User" }, 
