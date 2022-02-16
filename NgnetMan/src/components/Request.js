@@ -7,7 +7,6 @@ import common from '../common/common.json'
 export function Request() {
 
     let [action, setAction] = useState();
-    let [nasted, setNasted] = useState();
     let { setResponse } = useContext(HttpContext);
 
     function sendRequest(e) {
@@ -52,7 +51,7 @@ export function Request() {
         setAction(e.value);
     }
 
-    function toggleAddressHandler(param) {
+    function toggleHandler(param) {
         let isDisplayed = param.currentTarget.parentNode.children[2].classList.contains('display')
 
         if (isDisplayed) {
@@ -78,7 +77,7 @@ export function Request() {
                             {
                                 Array.isArray(param.value)
                                     ? <>
-                                        <span onClick={toggleAddressHandler}>+</span>
+                                        <span onClick={toggleHandler}>+</span>
                                             <div className='display'>
                                                 {param.value.map((nasted, index) => (
                                                     <div key={index} className="nasted-param">
@@ -89,7 +88,6 @@ export function Request() {
                                             </div>
                                     </>
                                     : <input type={param.value} name={param.value} />
-
                             }
                         </div>
                     ))}

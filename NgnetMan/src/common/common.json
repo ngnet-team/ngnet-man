@@ -44,11 +44,14 @@
                 ],
                  "label": "Address"},
             { "value": [ 
-                { "value": "tiktok", "label": "TikTok" },
-                { "value": "instagram", "label": "Instagram" },
+                { "value": "mobile", "label": "Mobile" },
+                { "value": "email", "label": "Email" },
+                { "value": "website", "label": "Website" },
                 { "value": "faceBook", "label": "FaceBook" },
-                { "value": "linkedIn", "label": "LinkedIn" },
-                { "value": "github", "label": "Github" }
+                { "value": "instagram", "label": "Instagram" },
+                { "value": "tiktok", "label": "TikTok" },
+                { "value": "youtube", "label": "Youtube" },
+                { "value": "twitter", "label": "Twitter" }
               ], "label": "Contact" }
         ],
         "change": [
