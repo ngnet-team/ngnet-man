@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
 
+const apiKey = "FC14A488-0C65-4052-BA99-FAC18291B5FC";
 const cookieKey = "NgNet.authorization.token";
 const url = 'http://localhost:7000/';
 
@@ -12,6 +13,7 @@ export const sendAjax = async(method, action, data) => {
             headers: {
                 'content-type': 'application/json',
                 'authorization': token ? 'Bearer ' + token : '',
+                'x-api-key': apiKey,
             },
             body: JSON.stringify(data)
         });
