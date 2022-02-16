@@ -44,9 +44,11 @@
                 ],
                  "label": "Address"},
             { "value": [ 
-                { "value": "ss", "label": "Country" },
-                { "value": "ss", "label": "City" },
-                { "value": "ss", "label": "Str" } 
+                { "value": "tiktok", "label": "TikTok" },
+                { "value": "instagram", "label": "Instagram" },
+                { "value": "faceBook", "label": "FaceBook" },
+                { "value": "linkedIn", "label": "LinkedIn" },
+                { "value": "github", "label": "Github" }
               ], "label": "Contact" }
         ],
         "change": [

@@ -6,11 +6,8 @@ import common from '../common/common.json'
 
 export function Request() {
 
-    const actions = common.actions;
-    const bodyParams = common.params;
-
     let [action, setAction] = useState();
-    let [check, setCheck] = useState(false);
+    let [nasted, setNasted] = useState();
     let { setResponse } = useContext(HttpContext);
 
     function sendRequest(e) {
@@ -20,8 +17,23 @@ export function Request() {
 
         if (common.params[action]) {
             data = common.params[action].reduce((acc, curr) => {
-                let key = curr.value;
-                let value = formData.get(curr.value);
+                let key;
+                let value;
+
+                if(Array.isArray(curr.value)){
+                    let nasted = {};
+                    for (let i = 0; i < curr.value.length; i++) {
+                        nasted[curr.value[i].value] = formData.get(curr.value[i].value);
+                    }
+                    
+                    key = curr.label;
+                    value = nasted;
+                }
+                else{
+                    key = curr.value;
+                    value = formData.get(curr.value);
+                }
+                 
                 acc[key] = value ? value : null;
                 return acc;
             }, {});
@@ -40,8 +52,15 @@ export function Request() {
         setAction(e.value);
     }
 
-    function toggleAddressHandler() {
-        setCheck(!check);
+    function toggleAddressHandler(param) {
+        let isDisplayed = param.currentTarget.parentNode.children[2].classList.contains('display')
+
+        if (isDisplayed) {
+            param.currentTarget.parentNode.children[2].classList.remove('display');
+        }
+        else {
+            param.currentTarget.parentNode.children[2].classList.add('display')
+        }
     }
 
     return (
@@ -53,25 +72,24 @@ export function Request() {
                 </div>
                 <div className="params">
                     {/* <div>No Params</div> */}
-                    {common.params[action]?.map((param) => (
-                        <div className="param" key={param.value}>
+                    {common.params[action]?.map((param, index) => (
+                        <div className="param" key={index}>
                             <label>{param.label}</label>
-                            { 
-                                // Array.isArray(param.value)
-                                //     ? <>
-                                //         <span onClick={toggleAddressHandler}>+</span>
-                                //         {check ?
-                                //             param.value.map((nasted, index) => (
-                                //                 <div key={index} className="nasted-param">
-                                //                     <label>{nasted.label}</label>
-                                //                     <input type='text' className='nasted-input' name={nasted.value} />
-                                //                 </div>
-                                //             ))
-                                //             : null
-                                //             }
-                                //     </>
-                                //     : 
-                                    <input type={param.value} name={param.value} />
+                            {
+                                Array.isArray(param.value)
+                                    ? <>
+                                        <span onClick={toggleAddressHandler}>+</span>
+                                            <div className='display'>
+                                                {param.value.map((nasted, index) => (
+                                                    <div key={index} className="nasted-param">
+                                                        <label>{nasted.label}</label>
+                                                        <input type='text' className='nasted-input' name={nasted.value} />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                    </>
+                                    : <input type={param.value} name={param.value} />
+
                             }
                         </div>
                     ))}
