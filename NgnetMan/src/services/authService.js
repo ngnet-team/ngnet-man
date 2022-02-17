@@ -18,7 +18,10 @@ export const sendAjax = async(method, action, data) => {
             body: JSON.stringify(data)
         });
 
-        let result = await res.json();
+        let result;
+        if (res.headers.get("content-type")) {
+            result = await res.json();
+        }
 
         if (action === 'logout' && res.ok) {
             Cookies.remove(cookieKey);
