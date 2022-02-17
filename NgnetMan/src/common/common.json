@@ -7,9 +7,9 @@
         { "method": "GET", "value": "profile", "label": "Profile" },
         { "method": "POST", "value": "update", "label": "Update" },
         { "method": "POST", "value": "change", "label": "Change" }, 
-        { "method": "POST", "value": "resetPassword", "label": "Reset Password" },
-        { "method": "POST", "value": "delete", "label": "Delete" },
-        { "method": "POST", "value": "deleteAccount", "label": "DeleteAccount" }, 
+        { "method": "GET", "value": "resetPassword", "label": "Reset Password" },
+        { "method": "GET", "value": "delete", "label": "Delete" },
+        { "method": "GET", "value": "deleteAccount", "label": "DeleteAccount" }, 
 
         { "method": "GET", "value": "users", "label": "Users" },
         { "method": "GET", "value": "roles", "label": "Roles" },

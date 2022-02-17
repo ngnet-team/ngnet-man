@@ -68,6 +68,7 @@ export function Request() {
                 <div className="action">
                     <label>Action</label>
                     <Select onChange={getAction} options={common.actions} />
+                    <hr></hr>
                 </div>
                 <div className="params">
                     {/* <div>No Params</div> */}
@@ -77,7 +78,7 @@ export function Request() {
                             {
                                 Array.isArray(param.value)
                                     ? <>
-                                        <span onClick={toggleHandler}>+</span>
+                                        <span className='expandNastedPlus' onClick={toggleHandler}>+</span>
                                             <div className='display'>
                                                 {param.value.map((nasted, index) => (
                                                     <div key={index} className="nasted-param">

@@ -65,3 +65,12 @@ button:hover {
 .display{
   display: none;
 }
+
+hr{
+  margin-top: 2rem;
+}
+
+.expandNastedPlus{
+  cursor: pointer;
+  font-size: 25px;
+}
