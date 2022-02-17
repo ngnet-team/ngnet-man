@@ -44,9 +44,14 @@
                 ],
                  "label": "Address"},
             { "value": [ 
-                { "value": "ss", "label": "Country" },
-                { "value": "ss", "label": "City" },
-                { "value": "ss", "label": "Str" } 
+                { "value": "mobile", "label": "Mobile" },
+                { "value": "email", "label": "Email" },
+                { "value": "website", "label": "Website" },
+                { "value": "faceBook", "label": "FaceBook" },
+                { "value": "instagram", "label": "Instagram" },
+                { "value": "tiktok", "label": "TikTok" },
+                { "value": "youtube", "label": "Youtube" },
+                { "value": "twitter", "label": "Twitter" }
               ], "label": "Contact" }
         ],
         "change": [
