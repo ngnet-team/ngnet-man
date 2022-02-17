@@ -61,3 +61,7 @@ button:hover {
   row-gap: 2px;
   margin-left: 40px;
 }
+
+.display{
+  display: none;
+}
