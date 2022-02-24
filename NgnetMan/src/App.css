@@ -25,7 +25,7 @@
   row-gap: 20px;
 }
 
-.param {
+.pairs {
   display: grid;
   grid-auto-flow: row;
   row-gap: 2px;
@@ -33,6 +33,12 @@
 
 input {
   height: 30px;
+}
+
+select {
+  height: 40px;
+  color: rgb(36, 36, 36);
+  background-color: rgb(245, 245, 245);
 }
 
 button {
