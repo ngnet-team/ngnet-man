@@ -1,25 +1,26 @@
 {
     "actions": [
 
-        { "method": "POST", "value": "register", "label": "Register" },
-        { "method": "POST", "value": "login", "label": "Login" },
-        { "method": "GET", "value": "logout", "label": "Logout" },
-        { "method": "GET", "value": "profile", "label": "Profile" },
-        { "method": "POST", "value": "update", "label": "Update" },
-        { "method": "POST", "value": "change", "label": "Change" }, 
-        { "method": "GET", "value": "resetPassword", "label": "Reset Password" },
-        { "method": "GET", "value": "delete", "label": "Delete" },
-        { "method": "GET", "value": "deleteAccount", "label": "DeleteAccount" }, 
+        { "role": "guest", "method": "POST", "value": "register", "label": "Register" },
+        { "role": "guest", "method": "POST", "value": "login", "label": "Login" },
+        { "role": "guest", "method": "POST", "value": "resetPassword", "label": "Reset Password" },
 
-        { "method": "GET", "value": "users", "label": "Users" },
-        { "method": "GET", "value": "roles", "label": "Roles" },
-        { "method": "GET", "value": "entries", "label": "Entries" },
-        { "method": "GET", "value": "rightsChanges", "label": "Rights Changes" },
-        { "method": "POST", "value": "changeRole", "label": "Change Role" }, 
-        { "method": "POST", "value": "deleteUser", "label": "Delete User" }, 
-        { "method": "POST", "value": "deleteUserAccount", "label": "Delete User Account" }, 
+        { "role": "user", "method": "GET", "value": "logout", "label": "Logout" },
+        { "role": "user", "method": "GET", "value": "profile", "label": "Profile" },
+        { "role": "user", "method": "POST", "value": "update", "label": "Update" },
+        { "role": "user", "method": "POST", "value": "change", "label": "Change" }, 
+        { "role": "user", "method": "GET", "value": "delete", "label": "Delete" },
+        { "role": "user", "method": "GET", "value": "deleteAccount", "label": "DeleteAccount" }, 
 
-        { "method": "POST", "value": "setMaxRoles", "label": "Set Max Roles" }  
+        { "role": "admin", "method": "GET", "value": "users", "label": "Users" },
+        { "role": "admin", "method": "GET", "value": "roles", "label": "Roles" },
+        { "role": "admin", "method": "GET", "value": "entries", "label": "Entries" },
+        { "role": "admin", "method": "GET", "value": "rightsChanges", "label": "Rights Changes" },
+        { "role": "admin", "method": "POST", "value": "changeRole", "label": "Change Role" }, 
+        { "role": "admin", "method": "POST", "value": "deleteUser", "label": "Delete User" }, 
+        { "role": "admin", "method": "POST", "value": "deleteUserAccount", "label": "Delete User Account" }, 
+
+        { "role": "owner", "method": "POST", "value": "setMaxRoles", "label": "Set Max Roles" }  
     ], 
     "params":{
         "register": [
@@ -30,6 +31,9 @@
         "login": [
             { "value": "username", "label": "Username" },
             { "value": "password", "label": "Password" }
+        ],
+        "resetPassword": [
+            { "value": "email", "label": "Email" }
         ],
         "update": [
             { "value": "firstName", "label": "FirstName" },
