@@ -6,7 +6,10 @@ import common from '../common/common.json'
 
 export function Request() {
 
-    let [action, setAction] = useState();
+    const actions = common.actions.filter(x => authService.permissions(x.role));
+    const params = common.params;
+
+    let [ action, setAction ] = useState();
     let { setResponse } = useContext(HttpContext);
 
     function sendRequest(e) {
@@ -14,8 +17,8 @@ export function Request() {
         let formData = new FormData(e.currentTarget);
         let data;
 
-        if (common.params[action]) {
-            data = common.params[action].reduce((acc, curr) => {
+        if (params[action]) {
+            data = params[action].reduce((acc, curr) => {
                 let key;
                 let value;
 
@@ -38,11 +41,13 @@ export function Request() {
             }, {});
         }
 
-        const method = common.actions.find(x => x.value === action).method;
+        const method = actions.find(x => x.value === action)?.method;
+        if (!method) { return; }
+
         authService.sendAjax(method, action, data).then(res => {
             if (res?.token) {
                 authService.setToken(res.token);
-            }
+            }// TODO: must be set from server
             setResponse(res);
         });
     };
@@ -67,12 +72,12 @@ export function Request() {
             <form onSubmit={sendRequest}>
                 <div className="action">
                     <label>Action</label>
-                    <Select onChange={getAction} options={common.actions} />
+                    <Select onChange={getAction} options={actions} />
                     <hr></hr>
                 </div>
                 <div className="params">
                     {/* <div>No Params</div> */}
-                    {common.params[action]?.map((param, index) => (
+                    {params[action]?.map((param, index) => (
                         <div className="param" key={index}>
                             <label>{param.label}</label>
                             {
@@ -88,7 +93,7 @@ export function Request() {
                                                 ))}
                                             </div>
                                     </>
-                                    : <input type={param.value} name={param.value} />
+                                    : <input name={param.value} />
                             }
                         </div>
                     ))}
